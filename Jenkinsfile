@@ -25,20 +25,6 @@ node{
         sh label: '', script: 'docker push sushantac/cart-service:0.0.1'
     }
 
-    stage('Run container on Dev server'){
-        try{
-            sh label: '', script: 'docker stop cart-service'
-        } catch(all) {
-
-        }
-        
-        try{
-            sh label: '', script: 'docker rm cart-service'
-        } catch(all) {
-
-        }
-
-        sh label: '', script: 'docker run -d -p 8004:8004 --name cart-service sushantac/cart-service:0.0.1'
-    }
+    
     
 }
